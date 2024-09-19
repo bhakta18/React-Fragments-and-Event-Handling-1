@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+      function App() {
+        // Function to trigger an alert
+        const showAlert = () => {
+          alert('Hello');
+        };
+
+        return (
+          <>
+            {/* React Fragment */}
+            <p>React is a javascript library</p>
+            
+            {/* Div with class 'main' and inline styles */}
+            <div className="main" style={{border: '2px solid black', padding: '10px', marginTop: '10px'}}>
+              <p>Click the below button to alert 'Hello'</p>
+              <button onClick={showAlert}>Alert Hello</button>
+            </div>
+          </>
+        );
+      }
+
+      // Render the App component to the root div
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
